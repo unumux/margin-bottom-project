@@ -1,0 +1,13 @@
+{
+    "private": true,
+    "devDependencies": {
+        "@unumux/ux-build-tools": "^3.7.0"
+    },
+    "scripts": {
+        "start": "gulp --gulpfile=node_modules/@unumux/ux-build-tools/index.js --cwd=."
+    },
+    "dependencies": {
+        "@unumux/theme-coloniallife-default": "0.5.0",
+        "bootstrap": "4.0.0-alpha.6"
+    }
+}
