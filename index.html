@@ -363,6 +363,8 @@
                 <div class="willow-styling-context">
                     <h1>Dialog and Modal</h1>
                 </div>
+                <button class="willow-button willow-button--inline" onclick="openDialog()">Dialog</button>
+                <button class="willow-button willow-button--inline" onclick="openModal()">Modal</button>
                 <div class="willow-dialog">
                     <section class="willow-dialog__container" role="dialog">
                         <h1 class="willow-dialog__heading">Heading Text</h1>
@@ -373,7 +375,7 @@
                             </div>
                         </div>
                         <ul class="willow-dialog__actions">
-                            <li class="willow-dialog__action"><button class="willow-button">Button</button></li>
+                            <li class="willow-dialog__action"><button class="willow-button" onclick="closeDialog()">Button</button></li>
                         </ul>
                     </section>
                 </div>
@@ -388,13 +390,12 @@
                             </div>
                         </div>
                         <ul class="willow-modal__actions">
-                            <li class="willow-modal__action"><button class="willow-button willow-button--negative">Negative</button></li>
-                            <li class="willow-modal__action"><button class="willow-button willow-button--primary">Primary</button></li>
+                            <li class="willow-modal__action"><button class="willow-button willow-button--negative" onclick="closeModal()">Negative</button></li>
+                            <li class="willow-modal__action"><button class="willow-button willow-button--primary" onclick="closeModal()">Primary</button></li>
                         </ul>
                     </section>
                 </div>
-                <button class="willow-button willow-button--inline">Dialog</button>
-                <button class="willow-button willow-button--inline">Modal</button>
+
                 <div class="willow-styling-context">
                     <h1>Buttons with Icons</h1>
                     <div>
@@ -446,10 +447,29 @@
             </footer>
         </div>
         <script src="scripts/site.min.js"></script>
+        <script>
+            var dialog = document.querySelector(".willow-dialog");
+            var modal = document.querySelector(".willow-modal");
+
+            var openDialog = function () {
+                dialog.setAttribute("data-dialog-close", "false");
+            }
+
+            var closeDialog = function () {
+                dialog.setAttribute("data-dialog-close", "true");
+            }
+
+            var openModal = function () {
+                modal.setAttribute("data-modal-close", "false");
+            }
+
+            var closeModal = function () {
+                modal.setAttribute("data-modal-close", "true");
+            }
+        </script>
     </body>
 
     </html>
-    <script src="scripts/site.min.js"></script>
 </body>
 
 </html>
